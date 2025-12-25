@@ -77,10 +77,9 @@ function Todo() {
   useEffect(() => {
     let listTask = getData();
     localStorage.setItem("task", JSON.stringify(listTask));
-    let newList = [...listTask];
-    setList(newList);
+    setList([...listTask]);
     setTask("");
-  }, []);
+  },[]);
   return (
     <div className="container-todo w-full h-lvh bg-gray-300 flex items-center justify-center">
       <div className=" w-10/14 h-13/14 bg-white rounded-3xl overflow-hidden ">
@@ -170,7 +169,7 @@ function Todo() {
 
                 {/* complete x */}
                 <div className=" flex gap-5 items-center relative  ">
-                  <p className="text-sm  absolute bottm-[12px] right-[50px] text-green-600">
+                  <p className="text-sm  absolute bottm-[12px] right-12.5 text-green-600">
                     {task.completed ? "(completed)" : " "}
                   </p>
                   <div className="hidden group-hover:flex">
